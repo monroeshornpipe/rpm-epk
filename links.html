@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabid Possum Monster — Links</title>
+  <meta name="description" content="Rabid Possum Monster — links to the EPK, socials, live videos, and Venmo." />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0f0c;
+      --surface: #121813;
+      --surface-2: #182018;
+      --text: #ece9df;
+      --muted: #9aa298;
+      --faint: #646b61;
+      --primary: #8ab83c;
+      --primary-hover: #9ccd4a;
+      --accent: #e07cbf;
+      --border: #283629;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'Satoshi', 'Helvetica Neue', Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      position: relative; min-height: 100dvh; overflow-x: hidden;
+      display: flex; flex-direction: column; align-items: center;
+      font-family: var(--font-body); color: var(--text); background-color: var(--bg);
+      padding: clamp(2rem, 6vw, 3.5rem) 1.25rem 1rem;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--primary); color: var(--bg); }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ---- atmosphere: animated flames ---- */
+    #flames {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; width: 100%; height: 100%;
+      image-rendering: pixelated;
+    }
+    .veil {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: linear-gradient(180deg, rgba(11,15,12,.8) 0%, rgba(11,15,12,.3) 30%, transparent 55%);
+    }
+
+    main { position: relative; z-index: 1; width: 100%; max-width: 460px; display: flex; flex-direction: column; align-items: center; }
+
+    /* ---- avatar ---- */
+    .avatar-wrap { position: relative; width: 104px; height: 104px; display: grid; place-items: center; }
+    .avatar-ring {
+      position: absolute; inset: -8px; border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--primary), var(--accent), var(--primary), var(--accent), var(--primary));
+      filter: blur(6px); opacity: .55; animation: spin 8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar {
+      position: relative; width: 96px; height: 96px; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--border); background: #fff;
+      animation: bob 4s ease-in-out infinite;
+      box-shadow: 0 8px 30px rgba(0,0,0,.55);
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    @keyframes bob { 0%,100%{transform:translateY(0) rotate(-1.5deg)} 50%{transform:translateY(-6px) rotate(1.5deg)} }
+
+    .name {
+      font-family: var(--font-display); font-weight: 400; font-size: 2.1rem; line-height: 1.02;
+      margin-top: 1.1rem; text-align: center; text-shadow: 0 0 30px rgba(138,184,60,.25);
+    }
+    .name em { font-style: italic; color: var(--primary); }
+    .tagline {
+      font-size: .82rem; color: var(--muted); margin-top: .4rem; text-align: center;
+      font-weight: 500; letter-spacing: .02em;
+    }
+    .tagline b { color: var(--accent); font-weight: 700; }
+
+    /* ---- marquee ---- */
+    .marquee {
+      width: 100vw; margin: 1.4rem 0 .2rem; overflow: hidden; border-block: 1px solid var(--border);
+      background: rgba(18,24,19,.6);
+    }
+    .marquee-track {
+      display: inline-flex; white-space: nowrap; gap: 2rem; padding: .45rem 0;
+      animation: marquee 26s linear infinite;
+      font-size: .72rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--faint);
+    }
+    .marquee-track span { display: inline-flex; align-items: center; gap: 2rem; }
+    .marquee-track i { color: var(--primary); font-style: normal; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* ---- link stack ---- */
+    .links { width: 100%; display: flex; flex-direction: column; gap: .7rem; margin-top: 1.4rem; }
+    .link {
+      position: relative; display: flex; align-items: center; gap: .85rem; width: 100%;
+      padding: .95rem 1.1rem; border-radius: 14px; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border);
+      transition: transform .2s cubic-bezier(.2,.8,.2,1), border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .link::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--primary); transform: scaleY(0); transform-origin: bottom; transition: transform .25s ease;
+    }
+    .link:hover, .link:focus-visible {
+      transform: translateY(-3px) scale(1.012); border-color: var(--primary); background: var(--surface-2);
+      box-shadow: 0 10px 26px rgba(0,0,0,.45), 0 0 0 1px rgba(138,184,60,.22);
+    }
+    .link:hover::before, .link:focus-visible::before { transform: scaleY(1); transform-origin: top; }
+    .link:active { transform: translateY(-1px) scale(1.005); }
+    .link-icon {
+      flex: 0 0 auto; width: 40px; height: 40px; border-radius: 11px;
+      display: grid; place-items: center; background: var(--bg); border: 1px solid var(--border); color: var(--primary);
+      transition: background .2s ease, color .2s ease, transform .25s ease;
+    }
+    .link:hover .link-icon, .link:focus-visible .link-icon { background: var(--primary); color: var(--bg); transform: rotate(-8deg); }
+    .link-icon svg { width: 20px; height: 20px; }
+    .link-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+    .link-label { font-weight: 700; font-size: .98rem; line-height: 1.2; }
+    .link-sub { font-size: .78rem; color: var(--muted); line-height: 1.3; }
+    .link-arrow { margin-left: auto; color: var(--faint); transition: color .2s ease, transform .2s ease; }
+    .link:hover .link-arrow, .link:focus-visible .link-arrow { color: var(--primary); transform: translateX(4px); }
+
+    .group-label {
+      align-self: flex-start; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+      font-weight: 900; color: var(--accent); margin: 1.5rem 0 .1rem; display: flex; align-items: center; gap: .5rem;
+    }
+    .group-label::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+    footer { position: relative; z-index: 1; margin-top: 2rem; font-size: .72rem; color: var(--faint); text-align: center; }
+    footer b { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 380px) {
+      .name { font-size: 1.75rem; }
+      .link { padding: .85rem .9rem; gap: .7rem; }
+      .link-icon { width: 36px; height: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="flames" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+
+  <main>
+    <div class="avatar-wrap">
+      <div class="avatar-ring" aria-hidden="true"></div>
+      <div class="avatar"><img src="assets/logo.jpg" alt="Rabid Possum Monster logo" /></div>
+    </div>
+    <h1 class="name">Rabid Possum <em>Monster</em></h1>
+    <p class="tagline">Pensacola, FL</p>
+
+    <nav class="links" aria-label="Links">
+
+      <a class="link" href="https://rabidpossummonster.pplx.app">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">The Full Mutation</span>
+          <span class="link-sub">EPK — bio, music, booking</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <p class="group-label">Stalk Us</p>
+
+      <a class="link" href="https://www.instagram.com/rabidpossummonster" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">Instagram</span>
+          <span class="link-sub">spotted in the wild</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="link" href="https://www.facebook.com/rabidpossummonster" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">Facebook</span>
+          <span class="link-sub">for the aunts &amp; uncles</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <p class="group-label">Ear Fodder</p>
+
+      <a class="link" href="https://www.youtube.com/watch?v=E_gqEi9xXUo" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12s0-3.5-.4-5.2a3 3 0 0 0-2.1-2.1C17.8 4.3 12 4.3 12 4.3s-5.8 0-7.5.4A3 3 0 0 0 2.4 6.8 33 33 0 0 0 2 12a33 33 0 0 0 .4 5.2 3 3 0 0 0 2.1 2.1c1.7.4 7.5.4 7.5.4s5.8 0 7.5-.4a3 3 0 0 0 2.1-2.1c.4-1.7.4-5.2.4-5.2z"/><path d="M10 9.2 14.5 12 10 14.8z" fill="currentColor"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">Bum a Cig</span>
+          <span class="link-sub">warning: may cause face melt</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="link" href="https://www.youtube.com/watch?v=dR-MKsBqslw" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12s0-3.5-.4-5.2a3 3 0 0 0-2.1-2.1C17.8 4.3 12 4.3 12 4.3s-5.8 0-7.5.4A3 3 0 0 0 2.4 6.8 33 33 0 0 0 2 12a33 33 0 0 0 .4 5.2 3 3 0 0 0 2.1 2.1c1.7.4 7.5.4 7.5.4s5.8 0 7.5-.4a3 3 0 0 0 2.1-2.1c.4-1.7.4-5.2.4-5.2z"/><path d="M10 9.2 14.5 12 10 14.8z" fill="currentColor"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">When We Get Where We're Goin'</span>
+          <span class="link-sub">we're not sure either</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="link" href="https://www.youtube.com/watch?v=veYUSmOugpc" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12s0-3.5-.4-5.2a3 3 0 0 0-2.1-2.1C17.8 4.3 12 4.3 12 4.3s-5.8 0-7.5.4A3 3 0 0 0 2.4 6.8 33 33 0 0 0 2 12a33 33 0 0 0 .4 5.2 3 3 0 0 0 2.1 2.1c1.7.4 7.5.4 7.5.4s5.8 0 7.5-.4a3 3 0 0 0 2.1-2.1c.4-1.7.4-5.2.4-5.2z"/><path d="M10 9.2 14.5 12 10 14.8z" fill="currentColor"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">Waymore's Blues</span>
+          <span class="link-sub">Waylon, but feral</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <p class="group-label">Fund the Chaos</p>
+
+      <a class="link" href="https://venmo.com/u/rabidpossummonster" target="_blank" rel="noopener">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">Venmo · Tip Jar</span>
+          <span class="link-sub">buy us a beer so we don't bite</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+    </nav>
+
+    <footer>© <span id="year"></span> <b>Rabid Possum Monster</b> · proceed with caution</footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // 8-bit fire + blue/white lightning + wandering possum, all on one canvas
+    (function () {
+      const canvas = document.getElementById('flames');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      ctx.imageSmoothingEnabled = false;
+
+      let w, h, dpr, fireW, fireH;
+      const off = document.createElement('canvas');
+      const octx = off.getContext('2d');
+      let img, buf;
+
+      // ---------- fire palette ----------
+      const STOPS = [
+        [0,  7,12,8,    0], [4,  18,45,16,  0], [7,  26,75,24, 160],
+        [11, 40,120,32, 210], [16, 70,165,42, 235], [21, 110,200,52,245],
+        [25, 160,222,62, 252], [28, 205,236,90, 255], [30, 235,244,150,255],
+        [32, 238,200,205,255], [34, 230,140,185,255], [36, 224,100,168,255],
+      ];
+      const PAL = new Array(37);
+      (function buildPal() {
+        for (let i = 0; i < STOPS.length - 1; i++) {
+          const a = STOPS[i], b = STOPS[i+1];
+          for (let k = a[0]; k <= b[0]; k++) {
+            const t = (k - a[0]) / (b[0] - a[0] || 1);
+            PAL[k] = [
+              Math.round(a[1]+(b[1]-a[1])*t),
+              Math.round(a[2]+(b[2]-a[2])*t),
+              Math.round(a[3]+(b[3]-a[3])*t),
+              Math.round(a[4]+(b[4]-a[4])*t),
+            ];
+          }
+        }
+      })();
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const cell = 12;
+        fireW = Math.ceil(innerWidth / cell);
+        fireH = Math.ceil(innerHeight / cell);
+        w = canvas.width = fireW * cell * dpr;
+        h = canvas.height = fireH * cell * dpr;
+        canvas.style.width = innerWidth + 'px';
+        canvas.style.height = innerHeight + 'px';
+        off.width = fireW; off.height = fireH;
+        img = octx.createImageData(fireW, fireH);
+        buf = new Uint8Array(fireW * fireH);
+        for (let x = 0; x < fireW; x++) buf[(fireH-1)*fireW + x] = 36;
+      }
+
+      function spread(src) {
+        const c = buf[src];
+        if (c === 0) { buf[src - fireW] = 0; }
+        else {
+          const r = (Math.random() * 3) | 0;
+          const dst = src - fireW + (r - 1);
+          if (dst >= 0 && dst < buf.length) buf[dst] = Math.max(0, c - 1 - (r & 1));
+        }
+      }
+
+      // ---------- blue & white lightning ----------
+      const lit = { next: Date.now()+2000+Math.random()*4000, bolts:[], flash:0 };
+      function strike() {
+        const sx = w * (0.12 + Math.random()*0.76);
+        let x = sx, y = 0;
+        const path = [[x,y]];
+        const ty = h * (0.22 + Math.random()*0.22);
+        while (y < ty) {
+          y += (10 + Math.random()*18) * dpr;
+          x += (Math.random()-0.5) * 40 * dpr;
+          path.push([x, y]);
+        }
+        lit.bolts.push({ path, life: 1 });
+        lit.flash = 0.35;
+        if (Math.random() < 0.35) setTimeout(strike, 60 + Math.random()*80);
+      }
+      function updateLit() {
+        if (Date.now() > lit.next) {
+          strike();
+          lit.next = Date.now() + 3000 + Math.random()*6000;
+        }
+        for (let i = lit.bolts.length-1; i >= 0; i--) {
+          lit.bolts[i].life -= 0.04;
+          if (lit.bolts[i].life <= 0) lit.bolts.splice(i,1);
+        }
+        lit.flash *= 0.80;
+      }
+      function drawBoltPath(path, sz) {
+        for (let i = 0; i < path.length-1; i++) {
+          let x0 = path[i][0]|0, y0 = path[i][1]|0;
+          let x1 = path[i+1][0]|0, y1 = path[i+1][1]|0;
+          const dx = Math.abs(x1-x0), dy = Math.abs(y1-y0);
+          const sx = x0<x1?1:-1, sy = y0<y1?1:-1;
+          let err = dx - dy;
+          while (true) {
+            ctx.fillRect(x0 - sz/2, y0 - sz/2, sz, sz);
+            if (x0===x1 && y0===y1) break;
+            const e2 = 2*err;
+            if (e2 > -dy) { err -= dy; x0 += sx; }
+            if (e2 < dx) { err += dx; y0 += sy; }
+          }
+        }
+      }
+      function drawLit() {
+        const bs = 5 * dpr;
+        for (const b of lit.bolts) {
+          if (b.life <= 0) continue;
+          // blue glow
+          ctx.fillStyle = 'rgba(100,170,255,' + (b.life*0.35) + ')';
+          drawBoltPath(b.path, bs + 3*dpr);
+          // white core
+          ctx.fillStyle = 'rgba(235,245,255,' + b.life + ')';
+          drawBoltPath(b.path, bs);
+          // bright center
+          ctx.fillStyle = 'rgba(255,255,255,' + b.life + ')';
+          drawBoltPath(b.path, Math.max(1, bs - 2*dpr));
+        }
+        if (lit.flash > 0.01) {
+          ctx.fillStyle = 'rgba(120,180,255,' + lit.flash + ')';
+          ctx.fillRect(0, 0, w, h);
+        }
+      }
+
+      // ---------- main loop ----------
+      resize();
+      addEventListener('resize', resize, { passive: true });
+
+      function tick() {
+        for (let x = 0; x < fireW; x++) buf[(fireH-1)*fireW + x] = 36;
+        for (let x = 0; x < fireW; x++)
+          for (let y = 1; y < fireH; y++) spread(y*fireW + x);
+        const d = img.data;
+        for (let i = 0; i < buf.length; i++) {
+          const p = PAL[buf[i]] || PAL[0];
+          const o = i*4;
+          d[o]=p[0]; d[o+1]=p[1]; d[o+2]=p[2]; d[o+3]=(p[3]*0.6)|0;
+        }
+        octx.putImageData(img, 0, 0);
+        ctx.fillStyle = '#0b0f0c';
+        ctx.fillRect(0, 0, w, h);
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(off, 0, 0, fireW, fireH, 0, 0, w, h);
+        updateLit(); drawLit();
+        requestAnimationFrame(tick);
+      }
+      if (!reduce) tick();
+    })();
+  </script>
+</body>
+</html>
