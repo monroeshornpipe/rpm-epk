@@ -8,146 +8,207 @@
   <link rel="icon" href="assets/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <a class="brand" href="#top">
-      <img src="assets/logo.jpg" alt="Rabid Possum Monster logo" />
-      <span class="brand-text">Rabid Possum Monster</span>
+  <!-- MASTHEAD -->
+  <header class="masthead" id="top">
+    <a class="masthead-mark" href="#top">
+      <img src="assets/logo.jpg" alt="RPM" />
     </a>
-    <nav class="site-nav" aria-label="Primary">
+    <div class="masthead-title">Rabid Possum Monster</div>
+    <nav class="masthead-nav" aria-label="Primary">
       <a href="#about">About</a>
+      <span class="nav-dot">·</span>
+      <a href="#gallery">Gallery</a>
+      <span class="nav-dot">·</span>
       <a href="#members">The Band</a>
+      <span class="nav-dot">·</span>
       <a href="#music">Music</a>
+      <span class="nav-dot">·</span>
       <a href="#booking">Booking</a>
     </nav>
-    <div class="header-actions">
-      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode" type="button">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <a class="btn btn-ghost" href="#booking">Book the Band</a>
-    </div>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode" type="button">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
   </header>
 
   <main id="main">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-grain" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <p class="eyebrow">Pensacola, FL · Est. 2018</p>
-        <h1 class="hero-title">Rabid Possum <span class="monster">Monster</span></h1>
-        <p class="hero-tag">Acoustadelic swamp-grass from the Gulf Coast.</p>
-        <ul class="pills" role="list">
-          <li>Psychedelic</li>
-          <li>Jam</li>
-          <li>Swamp</li>
-          <li>Bluegrass</li>
-        </ul>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#music">Watch Live</a>
-          <a class="btn btn-ghost" href="#booking">Booking Inquiry</a>
-        </div>
+    <!-- COVER -->
+    <section class="cover">
+      <div class="cover-image" aria-hidden="true"></div>
+      <div class="cover-veil" aria-hidden="true"></div>
+      <div class="cover-content">
+        <p class="cover-meta">No. 01 — Pensacola, FL</p>
+        <h1 class="cover-title">Rabid Possum<br><em>Monster</em></h1>
+        <p class="cover-tag">Acoustadelic swamp-grass from the Gulf Coast.</p>
       </div>
-      <a class="scroll-cue" href="#about" aria-label="Scroll to about">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      </a>
+      <div class="cover-facts">
+        <span>Psychedelic</span>
+        <span>Jam</span>
+        <span>Swamp</span>
+        <span>Bluegrass</span>
+      </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="section about" id="about">
-      <div class="container about-grid">
-        <div class="about-copy">
-          <p class="section-label">The Sound</p>
-          <h2 class="section-title">Untamed acoustic chaos, <em>refined</em>.</h2>
-          <p>Formed in 2018, Rabid Possum Monster has worn many faces — but the sound never changes: unbridled, untamed, unlike any other acoustic act on the Gulf Coast. From blistering bluegrass anthems to trippy space grooves and everywhere in between, RPM delivers unhinged, thrilling live shows.</p>
+    <section class="spread about" id="about">
+      <div class="spread-grid">
+        <div class="about-text">
+          <p class="kicker">01 — The Sound</p>
+          <h2 class="spread-headline">Untamed acoustic chaos, <em>refined</em>.</h2>
+          <p class="dropcap">Formed in 2018, Rabid Possum Monster has worn many faces — but the sound never changes: unbridled, untamed, unlike any other acoustic act on the Gulf Coast. From blistering bluegrass anthems to trippy space grooves and everywhere in between, RPM delivers unhinged, thrilling live shows.</p>
           <p>Call it <strong>acoustadelic</strong> — part psychedelic, part swamp, part bluegrass, all heart. The trio is house band at the legendary Red Bar in Grayton Beach, Florida.</p>
         </div>
-        <aside class="logo-sticker" aria-label="Rabid Possum Monster logo mark">
-          <img src="assets/logo.jpg" alt="Rabid Possum Monster hand-drawn logo with a severed possum tail dripping neon-green slime" />
+        <aside class="about-aside">
+          <div class="about-photo">
+            <img src="assets/gallery/rpm_07.jpg" alt="RPM posed in the pines" loading="lazy" />
+            <p class="caption">In the pines — Grayton Beach, FL</p>
+          </div>
+          <div class="logo-mark">
+            <img src="assets/logo.jpg" alt="Rabid Possum Monster logo" loading="lazy" />
+          </div>
         </aside>
       </div>
     </section>
 
-    <!-- MEMBERS -->
-    <section class="section members" id="members">
-      <div class="container">
-        <p class="section-label center">The Band</p>
-        <h2 class="section-title center">Three players, one feral sound.</h2>
-        <ul class="member-grid" role="list">
-          <li class="member">
-            <div class="member-instrument">Mandolin · Lead Vocals</div>
-            <h3 class="member-name">Brenan Woody</h3>
-            <p class="member-role">Lead vocals. Melts faces with a mandolin. Side effects may include uncontrollable dancing.</p>
-          </li>
-          <li class="member featured">
-            <div class="member-instrument">Bass</div>
-            <h3 class="member-name">Billy Howell</h3>
-            <p class="member-role">The bassist, a noisemaker</p>
-          </li>
-          <li class="member">
-            <div class="member-instrument">Acoustic Guitar</div>
-            <h3 class="member-name">Dylan Williams</h3>
-            <p class="member-role">Six strings of feral swamp fury.</p>
-          </li>
-        </ul>
+    <!-- GALLERY -->
+    <section class="spread gallery" id="gallery">
+      <div class="gallery-header">
+        <p class="kicker">02 — Field Recordings</p>
+        <h2 class="spread-headline">In the pines.</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g g-wide">
+          <img src="assets/gallery/rpm_01.jpg" alt="RPM playing in a pine clearing" loading="lazy" />
+        </figure>
+        <figure class="g g-tall">
+          <img src="assets/gallery/rpm_03.jpg" alt="RPM standing tall in the pines" loading="lazy" />
+        </figure>
+        <figure class="g">
+          <img src="assets/gallery/rpm_02.jpg" alt="RPM playing together in the woods" loading="lazy" />
+        </figure>
+        <figure class="g">
+          <img src="assets/gallery/rpm_04.jpg" alt="Candid moment between bandmates" loading="lazy" />
+        </figure>
+        <figure class="g g-wide">
+          <img src="assets/gallery/rpm_08.jpg" alt="RPM laughing together in the woods" loading="lazy" />
+        </figure>
+        <figure class="g g-tall">
+          <img src="assets/gallery/rpm_10.jpg" alt="RPM deep in the pine forest" loading="lazy" />
+        </figure>
+        <figure class="g">
+          <img src="assets/gallery/rpm_11.jpg" alt="RPM playing instruments in the clearing" loading="lazy" />
+        </figure>
+        <figure class="g">
+          <img src="assets/gallery/rpm_12.jpg" alt="RPM classic trio pose" loading="lazy" />
+        </figure>
+        <figure class="g g-square">
+          <img src="assets/gallery/rpm_14.jpg" alt="Bassist making a face — feral energy" loading="lazy" />
+        </figure>
       </div>
     </section>
 
-    <!-- MUSIC -->
-    <section class="section music" id="music">
-      <div class="container">
-        <p class="section-label center">Live · Recorded June 2026</p>
-        <h2 class="section-title center">Hear the set.</h2>
-        <p class="section-sub center">Recorded live at <strong>Be Scene – Get Herd Studios</strong>, Pensacola, FL.</p>
-        <div class="video-grid">
-          <figure class="video">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/E_gqEi9xXUo" title="Bum a Cig — Rabid Possum Monster (live)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <figcaption>
-              <span class="video-tag">Original</span>
-              <h3>Bum a Cig</h3>
-              <p>Into an extended jam.</p>
-            </figcaption>
-          </figure>
-          <figure class="video">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/dR-MKsBqslw" title="When We Get Where We're Goin' — Rabid Possum Monster (live)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <figcaption>
-              <span class="video-tag">Original</span>
-              <h3>When We Get Where We're Goin' (Right or Wrong)</h3>
-              <p>Live recording.</p>
-            </figcaption>
-          </figure>
-          <figure class="video">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/veYUSmOugpc" title="Waymore's Blues — Rabid Possum Monster (live)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <figcaption>
-              <span class="video-tag video-tag-cover">Cover</span>
-              <h3>Waymore's Blues</h3>
-              <p>Waylon Jennings, RPM-style.</p>
-            </figcaption>
-          </figure>
+    <!-- PULL QUOTE -->
+    <section class="pullquote">
+      <blockquote>
+        <p>"Part psychedelic, part swamp, part bluegrass — <em>all heart</em>."</p>
+      </blockquote>
+    </section>
+
+    <!-- MEMBERS -->
+    <section class="spread members" id="members">
+      <div class="members-header">
+        <p class="kicker">03 — The Band</p>
+        <h2 class="spread-headline">Three players,<br>one feral sound.</h2>
+      </div>
+
+      <article class="member-row">
+        <div class="member-photo">
+          <img src="assets/members/brenan.jpg" alt="Brenan Woody" loading="lazy" />
         </div>
+        <div class="member-info">
+          <p class="member-instrument">Mandolin · Lead Vocals</p>
+          <h3 class="member-name">Brenan Woody</h3>
+          <p class="member-role">Lead vocals. Melts faces with a mandolin. Side effects may include uncontrollable dancing.</p>
+        </div>
+      </article>
+
+      <article class="member-row reverse">
+        <div class="member-photo">
+          <img src="assets/members/billy.jpg" alt="Billy Howell" loading="lazy" />
+        </div>
+        <div class="member-info">
+          <p class="member-instrument">Bass</p>
+          <h3 class="member-name">Billy Howell</h3>
+          <p class="member-role">The bassist, a noisemaker.</p>
+        </div>
+      </article>
+
+      <article class="member-row">
+        <div class="member-photo">
+          <img src="assets/members/dylan.jpg" alt="Dylan Williams" loading="lazy" />
+        </div>
+        <div class="member-info">
+          <p class="member-instrument">Acoustic Guitar</p>
+          <h3 class="member-name">Dylan Williams</h3>
+          <p class="member-role">Six strings of feral swamp fury.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- MUSIC -->
+    <section class="spread music" id="music">
+      <div class="music-header">
+        <p class="kicker">04 — Live · Recorded June 2026</p>
+        <h2 class="spread-headline">Hear the set.</h2>
+        <p class="music-sub">Recorded live at <strong>Be Scene — Get Herd Studios</strong>, Pensacola, FL.</p>
+      </div>
+      <div class="music-grid">
+        <figure class="video video-featured">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/E_gqEi9xXUo" title="Bum a Cig — Rabid Possum Monster (live)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <figcaption>
+            <span class="video-tag">Original</span>
+            <h3>Bum a Cig</h3>
+            <p>Into an extended jam.</p>
+          </figcaption>
+        </figure>
+        <figure class="video">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/dR-MKsBqslw" title="When We Get Where We're Goin' — Rabid Possum Monster (live)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <figcaption>
+            <span class="video-tag">Original</span>
+            <h3>When We Get Where We're Goin' (Right or Wrong)</h3>
+            <p>Live recording.</p>
+          </figcaption>
+        </figure>
+        <figure class="video">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/veYUSmOugpc" title="Waymore's Blues — Rabid Possum Monster (live)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <figcaption>
+            <span class="video-tag video-tag-cover">Cover</span>
+            <h3>Waymore's Blues</h3>
+            <p>Waylon Jennings, RPM-style.</p>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- BOOKING -->
-    <section class="section booking" id="booking">
-      <div class="container booking-card">
-        <div class="booking-copy">
-          <p class="section-label">Booking</p>
-          <h2 class="section-title">Bring the monster to your stage.</h2>
+    <section class="spread booking" id="booking">
+      <div class="booking-grid">
+        <div class="booking-text">
+          <p class="kicker">05 — Booking</p>
+          <h2 class="spread-headline">Bring the monster<br>to your stage.</h2>
           <p>Available for clubs, festivals, private events, and residencies along the Gulf Coast and beyond. Press, sync, and label inquiries welcome.</p>
           <div class="booking-contacts">
             <a class="contact" href="mailto:rabidpossummonster@gmail.com">
@@ -165,22 +226,22 @@
           </div>
         </div>
         <div class="booking-photo">
-          <img src="assets/band.jpg" alt="Rabid Possum Monster — Brenan Woody, Billy Howell, and Dylan Williams" />
+          <img src="assets/gallery/rpm_09.jpg" alt="RPM playing live in the sunlight" loading="lazy" />
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <div class="colophon-brand">
         <img src="assets/logo.jpg" alt="" />
         <div>
           <strong>Rabid Possum Monster</strong>
           <span>Acoustadelic swamp-grass · Pensacola, FL</span>
         </div>
       </div>
-      <p class="footer-meta">© <span id="year"></span> Rabid Possum Monster. Do not approach.</p>
+      <p class="colophon-meta">© <span id="year"></span> Rabid Possum Monster. Do not approach.</p>
     </div>
   </footer>
 
@@ -193,8 +254,8 @@
       r.setAttribute('data-theme', d);
       function syncBtn() {
         t && (t.innerHTML = d === 'dark'
-          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>');
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>');
         t && t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
       }
       syncBtn();
