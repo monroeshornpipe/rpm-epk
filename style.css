@@ -1,5 +1,5 @@
 /* ============================================================
-   Rabid Possum Monster — Editorial Redesign
+   Rabid Possum Monster — Editorial Redesign v2
    Magazine-spread layout with the band's swamp palette.
    ============================================================ */
 
@@ -23,6 +23,7 @@
   --color-hero-veil: rgba(10, 14, 10, 0.45);
 
   --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-hero: 'Fraunces', Georgia, serif;
   --font-body: 'Satoshi', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Space Mono', 'Courier New', monospace;
 
@@ -99,6 +100,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   font-family: var(--font-display); font-size: 1.25rem;
   white-space: nowrap;
 }
+.back-link { text-decoration: none; color: var(--color-text); font-family: var(--font-mono); font-size: var(--text-sm); }
+.back-link:hover { color: var(--color-primary); }
 .masthead-nav {
   display: flex; align-items: center; gap: 0.5rem;
   margin-left: auto;
@@ -116,9 +119,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 }
 .theme-toggle:hover { color: var(--color-primary); border-color: var(--color-primary); }
 @media (max-width: 860px) {
-  .masthead { padding: 0.5rem 1rem; gap: 0.75rem; }
+  .masthead { padding: 0.5rem 1rem; gap: 0.5rem; }
   .masthead-title { display: none; }
-  .masthead-nav { gap: 0.35rem; }
+  .masthead-nav { gap: 0.3rem; }
   .masthead-nav a { font-size: 0.65rem; }
   .nav-dot { display: none; }
 }
@@ -139,12 +142,12 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .cover-veil {
   position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, transparent 0%, transparent 35%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.65) 100%),
-    linear-gradient(90deg, rgba(0,0,0,0.4) 0%, transparent 50%);
+    linear-gradient(180deg, transparent 0%, transparent 35%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.7) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.45) 0%, transparent 55%);
 }
 .cover-content {
   position: relative; z-index: 2;
-  padding: 0 2rem 3.5rem;
+  padding: 0 2rem 4rem;
   max-width: var(--content-wide);
   margin: 0 auto; width: 100%;
 }
@@ -154,39 +157,24 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   margin-bottom: 0.75rem;
 }
 .cover-title {
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-hero); font-weight: 600;
   font-size: var(--text-hero); line-height: 0.88;
   color: #f4f1e8; text-shadow: 0 4px 40px rgba(0,0,0,0.5);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
 }
 .cover-title em {
-  font-style: italic; color: var(--color-primary);
+  font-style: italic; font-weight: 400; color: var(--color-primary);
   text-shadow: 0 4px 30px rgba(0,0,0,0.5), 0 0 60px rgba(138,184,60,0.3);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
 }
 .cover-tag {
   font-family: var(--font-display); font-style: italic;
   font-size: var(--text-xl); color: rgba(255,255,255,0.85);
   margin-top: 0.75rem;
 }
-.cover-facts {
-  position: relative; z-index: 2;
-  display: flex; gap: 2rem; flex-wrap: wrap;
-  padding: 1.25rem 2rem;
-  max-width: var(--content-wide);
-  margin: 0 auto; width: 100%;
-  border-top: 1px solid rgba(255,255,255,0.15);
-  background: rgba(11,15,12,0.5);
-  backdrop-filter: blur(8px);
-}
-.cover-facts span {
-  font-family: var(--font-mono); font-size: var(--text-xs);
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-}
 @media (max-width: 760px) {
-  .cover-content { padding: 0 1.25rem 2.5rem; }
-  .cover-facts { gap: 1rem; padding: 1rem 1.25rem; }
-  .cover-facts span { font-size: 0.6rem; }
+  .cover-content { padding: 0 1.25rem 3rem; }
 }
 
 /* ---- SPREAD (shared section) ---- */
@@ -233,11 +221,6 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   width: 100%; border-radius: 2px;
   filter: contrast(1.02) saturate(0.95);
 }
-.caption {
-  font-family: var(--font-mono); font-size: var(--text-xs);
-  color: var(--color-text-faint); margin-top: 0.5rem;
-  letter-spacing: 0.02em;
-}
 .logo-mark {
   align-self: center; padding: 0.75rem;
   background: #fff; border-radius: 4px;
@@ -252,7 +235,7 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
   .logo-mark { display: none; }
 }
 
-/* ---- GALLERY ---- */
+/* ---- GALLERY HIGHLIGHTS (homepage) ---- */
 .gallery {
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
@@ -260,16 +243,68 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .gallery-header {
   max-width: var(--content-default); margin-inline: auto;
   padding-inline: 2rem; margin-bottom: 3rem;
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 1.5rem;
 }
-.gallery-grid {
+.gallery-header .kicker { margin-bottom: 0; }
+.gallery-header .spread-headline { margin-bottom: 0; }
+.gallery-link {
+  font-family: var(--font-mono); font-size: var(--text-sm);
+  text-decoration: none; color: var(--color-primary);
+  margin-left: auto; white-space: nowrap;
+}
+.gallery-link:hover { color: var(--color-primary-hover); }
+.gallery-highlights {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 180px;
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
   gap: 6px;
   max-width: var(--content-wide);
   margin-inline: auto;
   padding-inline: 2rem;
 }
+@media (max-width: 860px) {
+  .gallery-highlights { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; padding-inline: 1rem; }
+  .gallery-header { padding-inline: 1.25rem; }
+  .gallery-link { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .gallery-highlights { grid-auto-rows: 120px; gap: 4px; }
+}
+
+/* ---- GALLERY FULL PAGE ---- */
+.gallery-page {
+  max-width: var(--content-wide); margin-inline: auto;
+}
+.gallery-page .gallery-header {
+  max-width: var(--content-wide); margin-bottom: 2.5rem;
+}
+.gallery-full {
+  column-count: 4;
+  column-gap: 6px;
+  padding-inline: 2rem;
+}
+.gallery-full .g {
+  break-inside: avoid;
+  margin-bottom: 6px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.gallery-full .g img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+}
+@media (max-width: 860px) {
+  .gallery-full { column-count: 2; padding-inline: 1rem; }
+}
+@media (max-width: 480px) {
+  .gallery-full { column-count: 2; column-gap: 4px; }
+  .gallery-full .g { margin-bottom: 4px; }
+}
+
+/* ---- SHARED GALLERY GRID ITEMS ---- */
 .g {
   overflow: hidden; position: relative;
   background: var(--color-surface-2);
@@ -283,37 +318,6 @@ button { cursor: pointer; background: none; border: none; color: inherit; font: 
 .g-wide { grid-column: span 2; grid-row: span 2; }
 .g-tall { grid-row: span 2; }
 .g-square { grid-column: span 1; grid-row: span 1; }
-@media (max-width: 860px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; padding-inline: 1rem; }
-  .g-wide { grid-column: span 2; grid-row: span 2; }
-  .g-tall { grid-row: span 2; }
-}
-@media (max-width: 480px) {
-  .gallery-grid { grid-auto-rows: 110px; gap: 4px; }
-}
-
-/* ---- PULL QUOTE ---- */
-.pullquote {
-  padding-block: clamp(3rem, 6vw, 5rem);
-  text-align: center;
-  border-bottom: 1px solid var(--color-border);
-}
-.pullquote blockquote {
-  max-width: 900px; margin-inline: auto; padding-inline: 2rem;
-}
-.pullquote p {
-  font-family: var(--font-display); font-style: italic;
-  font-size: clamp(1.5rem, 1rem + 2.5vw, 2.8rem);
-  line-height: 1.2; color: var(--color-text);
-  max-width: none;
-}
-.pullquote em { color: var(--color-primary); }
-.pullquote::before {
-  content: "\201C"; display: block;
-  font-family: var(--font-display); font-size: 5rem;
-  color: var(--color-accent); opacity: 0.4;
-  line-height: 0.5; margin-bottom: 0.5rem;
-}
 
 /* ---- MEMBERS ---- */
 .members {
